@@ -5,6 +5,7 @@
     --color-main1: rgb(var(--red1), var(--blue1), var(--green1));
     --color-main2: #eff5fa;
     --color-main3: #36454F;
+    font-size: 16px;
 }
 
 * {
@@ -18,8 +19,8 @@
     grid-template-areas: "header header"
                          "other other";
     height: 110vh;
-    width: 100%;
-    grid-template-rows: 25% 75%;
+    min-width: 1000px;
+    max-width: 100%;
     grid-template-columns: 1fr;
     background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(../images/background.jpg);
     background-size: cover;
@@ -39,29 +40,33 @@
 .logo {
     justify-content: center;
     align-content: center;
+    min-width: 100px;
+    max-width: 10vw;
 }
 
-.a {
-    height: 200px;
-    width: auto;
+.logo .a {
+    height: auto;
+    width: 100%;
 }
 
-.navbar {
+.banner .navbar {
     grid-column: 2 / span 1;
     justify-content: center;
     justify-items: center;
     align-content: center;
     align-items: stretch;
+    align-self: center;
+    max-height: 100px;
+    display: flex;
 }
 
-.navbar {
-    align-self: center;
-    justify-self: center;
-}
 
 .navbar li {
     display: inline-block;
-    font-size: 3.25em;
+    min-width: 100px;
+    height: auto;
+    font-size: clamp(30px, 2.9vw, 100px);
+    text-align: center;
     margin: 0 1em;
 }
 
@@ -100,19 +105,22 @@
     grid-area: other;
     align-self: center;
     justify-self: center;
+    width: 100%;
+    height: auto;
 }
 
 .motto {
+    margin: clamp(100px, 20vh, 200px) 0;
     color: var(--color-main3, #000);
     text-align: center;
 }
 
 .motto h1 {
-    font-size: 10em;
+    font-size: clamp(100px, 10vw, 200px);
 }
 
 .motto h2 {
-    font-size: 3em;
+    font-size: clamp(40px, 4vw, 80px);
     text-align: center;
     margin-bottom: 1.4em;
     margin-top: 0.8em;
@@ -129,13 +137,15 @@
 }
 
 .start {
-    height: 3em;
-    width: 10em;
+    min-height: 50px;
+    height: 4vw;
+    min-width: 150px;
+    width: 12vw;
     margin: 0;
     justify-self: center;
     color: var(--color-main2, #fff);
     background-color: var(--color-main3, #000);
-    font-size: 1.5em;
+    font-size: clamp(20px, 1.75vw, 37.5px);
     border-radius: 1em;
     transition: all ease-out;
 }
