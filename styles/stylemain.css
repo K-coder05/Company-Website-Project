@@ -1,0 +1,166 @@
+:root {
+    --red1: 45;
+    --blue1: 225;
+    --green1: 210;
+    --color-main1: rgb(var(--red1), var(--blue1), var(--green1));
+    --color-main2: #eff5fa;
+    --color-main3: #36454F;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: "header header"
+                         "other other";
+    height: 110vh;
+    width: 100%;
+    grid-template-rows: 25% 75%;
+    grid-template-columns: 1fr;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(../images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.banner {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.logo {
+    justify-content: center;
+    align-content: center;
+}
+
+.a {
+    height: 200px;
+    width: auto;
+}
+
+.navbar {
+    grid-column: 2 / span 1;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: stretch;
+}
+
+.navbar {
+    align-self: center;
+    justify-self: center;
+}
+
+.navbar li {
+    display: inline-block;
+    font-size: 3.25em;
+    margin: 0 1em;
+}
+
+.navbar li:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.navbar li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.1em;
+    background-color: var(--color-main1);
+    transition: width 0.3s ease;
+  }
+  
+  .navbar li:hover::after {
+    width: 100%;
+  }
+
+
+.navbar li a {
+    text-decoration: none;
+    color: var(--color-main3, #000);
+    transition: color 500ms ease-out;
+}
+
+.navbar li a:hover {
+    color: var(--color-main1);
+}
+
+.content {
+    grid-area: other;
+    align-self: center;
+    justify-self: center;
+}
+
+.motto {
+    color: var(--color-main3, #000);
+    text-align: center;
+}
+
+.motto h1 {
+    font-size: 10em;
+}
+
+.motto h2 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 1.4em;
+    margin-top: 0.8em;
+}
+
+.motto span {
+    display: inline-block;
+    font-style: italic;
+    transition: transform 0.3s ease;
+}
+
+.motto span:hover {
+    transform: rotate(10deg);
+}
+
+.start {
+    height: 3em;
+    width: 10em;
+    margin: 0;
+    justify-self: center;
+    color: var(--color-main2, #fff);
+    background-color: var(--color-main3, #000);
+    font-size: 1.5em;
+    border-radius: 1em;
+    transition: all ease-out;
+}
+
+.start:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+    color: rgb(calc(var(--red1) + 40), calc(var(--green1) + 40), calc(var(--blue1) + 40));
+}
+
+.footer {
+    text-align: center;
+    background-color: var(--color-main3, #000);
+    color: var(--color-main2, #fff);
+    padding-top: 3em;
+    padding-bottom: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .footer-column {
+    display: inline-block;
+    margin: 0 4em;
+}
+
+.footer .footer-column p {
+    margin: 0.75em 0;
+}

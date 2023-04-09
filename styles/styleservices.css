@@ -1,0 +1,71 @@
+:root {
+    --red1: 45;
+    --blue1: 225;
+    --green1: 210;
+    --color-main1: rgb(var(--red1), var(--blue1), var(--green1));
+    --color-main2: #eff5fa;
+    --color-main3: #36454F;
+    font-size: 16px;
+}
+
+.services {
+    width: 100%;
+    height: 35vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.service-body {
+    width: 30%;
+    text-align: center;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease-in-out;
+}
+
+.service-body:hover {
+    transform: scale(1.1);
+}
+
+.services .service-body .image1 {
+    width: 90%;
+    height: 90%;
+    display: block;
+    border-radius: 1rem;
+}
+
+.X {
+    background-color: lightblue;
+    margin-top: 2rem;
+}
+
+.Y {
+    background-color: lightcoral;
+    margin-bottom: 2rem;
+}
+
+.Z {
+    background-color: lightcyan;
+    margin-top: 2rem;
+}
+
+.service-text {
+    width: 90%;
+    border: 0.5em solid var(--color-main3);
+    justify-self: center;
+    border-radius: 1rem;
+    color: var(--color-main3)
+}
+
+.service-text h2 {
+    margin-bottom: 0.5em;
+}
+
+.service-text p {
+    line-height: 2;
+}
